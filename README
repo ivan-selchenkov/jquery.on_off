@@ -1,0 +1,9 @@
+jquery.on_off allows to temporarily turn off jquery events.
+
+example:
+
+$('.load_button').off_event('click');
+
+and you can turn on again
+
+$('.load_button').on_event('click');

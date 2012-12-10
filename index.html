@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta content='text/html;charset=UTF-8' http-equiv='Content-Type'>
+    <title>jquery.on_off.test</title>
+    <link rel="stylesheet" href="qunit.css">
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="jquery.on_off.js" type="text/javascript"></script>
+</head>
+<body>
+  <div id="test_div"></div>
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="qunit.js"></script>
+  <script>
+    $test_div = $('#test_div');
+
+    test("Event works OK", function() {
+      var value = 0;
+      $test_div.on( 'click', function() { value++; })
+
+      equal( value, 0, "We expect value to be 0" );
+
+      $test_div.click()      
+      equal( value, 1, "We expect value to be 1" );
+
+      $test_div.click()      
+      equal( value, 2, "We expect value to be 2" );
+
+      $test_div.off('click');
+    })
+
+
+    test("Event off works OK", function() {
+      var value = 0;
+      $test_div.on( 'click', function() { value++; })
+
+      equal( value, 0, "We expect value to be 0" );
+
+      $test_div.click();
+      equal( value, 1, "We expect value to be 1" );
+
+      $test_div.off_event('click');
+
+      $test_div.click();
+      equal( value, 1, "We expect value to be 1" );
+
+      $test_div.on_event('click');
+
+      $test_div.click();
+      equal( value, 2, "We expect value to be 2" );
+
+      $test_div.off('click');
+
+    })
+
+    test("Sequence of on/off", function() {
+      var value = 0;
+      $test_div.on( 'click', function() { value++; })
+
+      equal( value, 0, "We expect value to be 0" );
+
+      $test_div.off_event('click');
+      $test_div.on_event('click');
+      $test_div.off_event('click');
+      $test_div.on_event('click');
+      $test_div.off_event('click');
+      $test_div.on_event('click');
+
+      $test_div.click();
+      equal( value, 1, "We expect value to be 1" );
+
+      $test_div.off('click');      
+    })
+
+    test("Two click function", function() {
+      var value1 = 0;
+      var value2 = 0;
+
+      $test_div.on( 'click', function() { value1++; })
+      $test_div.on( 'click', function() { value2++; })
+
+      equal( value1, 0, "We expect value1 to be 0" );
+      equal( value2, 0, "We expect value2 to be 0" );
+
+      $test_div.click();
+
+      equal( value1, 1, "We expect value1 to be 1" );
+      equal( value2, 1, "We expect value2 to be 1" );
+
+      $test_div.off_event('click');
+
+      $test_div.click();
+
+      equal( value1, 1, "We expect value1 to be 1" );
+      equal( value2, 1, "We expect value2 to be 1" );
+
+      $test_div.on_event('click');
+
+      $test_div.click();
+
+      equal( value1, 2, "We expect value1 to be 2" );
+      equal( value2, 2, "We expect value2 to be 2" );
+
+  })
+
+  </script>
+</body>
+</html>
