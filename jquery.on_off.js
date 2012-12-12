@@ -7,7 +7,6 @@
  * Released under the MIT, BSD, and GPL Licenses.
  */
 
-
 jQuery.fn.extend({
   off_event: function(event_name) {
     return this.each(function() {

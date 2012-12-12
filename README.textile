@@ -6,7 +6,7 @@ Tested on jQuery v1.7.2
 
 h2. Installation
 
-To install jQuery on/off plugin make sure you have jQuery installed. Next, add jquery.on_off.js to the head of your webpage.
+To install jQuery on/off plugin make sure you have jQuery installed. Next, add __jquery.on_off.js__ to the head of your webpage.
 
 bc. <script type="text/javascript" src="jquery.on_off.js"></script>
 
@@ -19,3 +19,9 @@ bc. $('.load_button').off_event('click');
 and you can turn it on again
 
 bc. $('.load_button').on_event('click');
+
+h2. Testing another jQuery version
+
+Just replace __jquery.js__ file to your version and load __index.html__ in your broswer.
+
+You will see results of unit tests.
