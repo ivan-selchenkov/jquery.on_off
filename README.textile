@@ -1,0 +1,21 @@
+h1. jQuery on/off plugin
+
+Plugin allows to temporarily turn off jquery events.
+
+Tested on jQuery v1.7.2
+
+h2. Installation
+
+To install jQuery on/off plugin make sure you have jQuery installed. Next, add jquery.on_off.js to the head of your webpage.
+
+bc. <script type="text/javascript" src="jquery.on_off.js"></script>
+
+h2. Basic usage
+
+To turn off event for element use this code:
+
+bc. $('.load_button').off_event('click');
+
+and you can turn it on again
+
+bc. $('.load_button').on_event('click');
