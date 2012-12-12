@@ -1,3 +1,13 @@
+/*!
+ * jQuery on/off events plugin, a jQuery plugin
+ * Version v0.1
+ * https://github.com/vashik/jquery.on_off
+ *
+ * Copyright (c) 2012 Ivan Selchenkov
+ * Released under the MIT, BSD, and GPL Licenses.
+ */
+
+
 jQuery.fn.extend({
   off_event: function(event_name) {
     return this.each(function() {
